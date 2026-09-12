@@ -1,0 +1,7 @@
+{
+  "name": "Kitchen Companion",
+  "description": "A warm and smart kitchen assistant that turns the ingredients in your fridge and storage into delicious meals.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

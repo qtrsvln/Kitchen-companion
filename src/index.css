@@ -1,0 +1,466 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-cream: #FAF7F2;
+  --color-forest: #1B3B2B;
+  --color-forest-dark: #12281D;
+  --color-forest-light: #2A563F;
+  --color-sage: #E8F0EA;
+  --color-sage-light: #F2F7F3;
+  --color-warm-border: #E8E2D8;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #FAF7F2;
+  color: #1A2D23;
+}
+
+.font-editorial {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* Botanical Leaf Swaying Animation on Hover */
+@keyframes branchSway {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(3.5deg);
+  }
+  45% {
+    transform: rotate(-2.8deg);
+  }
+  70% {
+    transform: rotate(2deg);
+  }
+  85% {
+    transform: rotate(-1.2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes leafRustle1 {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(6deg) scale(1.02);
+  }
+  100% {
+    transform: rotate(-4deg) scale(0.98);
+  }
+}
+
+@keyframes leafRustle2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(-7deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes leafRustle3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes leafRustle4 {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  30% {
+    transform: rotate(11deg) scale(1.04);
+  }
+  70% {
+    transform: rotate(-9deg) scale(0.97);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes leafRustle5 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+.leaves-branch-sway {
+  transform-origin: 174px 212px;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.group:hover .leaves-branch-sway,
+.leaves-branch-sway:hover {
+  animation: branchSway 2.6s ease-in-out infinite;
+}
+
+.group:hover .leaf-anim-1,
+.leaf-anim-1:hover {
+  animation: leafRustle1 1.7s ease-in-out infinite alternate;
+}
+
+.group:hover .leaf-anim-2,
+.leaf-anim-2:hover {
+  animation: leafRustle2 2.1s ease-in-out infinite;
+}
+
+.group:hover .leaf-anim-3,
+.leaf-anim-3:hover {
+  animation: leafRustle3 1.9s ease-in-out infinite;
+}
+
+.group:hover .leaf-anim-4,
+.leaf-anim-4:hover {
+  animation: leafRustle4 1.5s ease-in-out infinite;
+}
+
+.group:hover .leaf-anim-5,
+.leaf-anim-5:hover {
+  animation: leafRustle5 2.3s ease-in-out infinite alternate;
+}
+
+/* ========================================================= */
+/* Hero Illustration Interactive Hover Choreography          */
+/* 1. Tomato: goes away and comes back                      */
+/* 2. Leaves: just moving / gentle breeze                   */
+/* 3. Tablet: little move right and left                    */
+/* 4. Lines near tablet: moving more to the right and top   */
+/* ========================================================= */
+
+/* 1. Tomato: subtle, gentle little move and smooth float */
+@keyframes tomatoGoAwayAndReturn {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  28% {
+    transform: translate(-6px, -5px) rotate(-3deg);
+  }
+  55% {
+    transform: translate(5px, -3px) rotate(2deg);
+  }
+  78% {
+    transform: translate(-2px, 1px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes tomatoShadowFade {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.25;
+  }
+  28% {
+    transform: scale(0.94) translate(-4px, 1px);
+    opacity: 0.22;
+  }
+  55% {
+    transform: scale(1.03) translate(3px, 0px);
+    opacity: 0.26;
+  }
+  78% {
+    transform: scale(0.98) translate(-1px, 0px);
+    opacity: 0.24;
+  }
+  100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.25;
+  }
+}
+
+@keyframes foliageSway {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg) scale(1.02);
+  }
+  50% {
+    transform: rotate(-3.5deg) scale(0.98);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.01);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes heroLeafFlutter1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes heroLeafFlutter2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes tabletMoveRightLeft {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(12px, -2px) rotate(1.8deg);
+  }
+  50% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-12px, 2px) rotate(-1.8deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes linesMoveRightTop {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translate(16px, -14px) scale(1.12);
+    opacity: 1;
+  }
+  55% {
+    transform: translate(32px, -28px) scale(1.22);
+    opacity: 0.95;
+  }
+  75% {
+    transform: translate(42px, -36px) scale(1.28);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.7;
+  }
+}
+
+.hero-tomato-anim {
+  transform-origin: 142px 406px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-tomato-shadow-anim {
+  transform-origin: 142px 454px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-foliage-sway {
+  transform-origin: 152px 410px;
+  transition: transform 0.5s ease-out;
+}
+
+.hero-tablet-move {
+  transform-origin: 280px 255px;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-tablet-lines-anim {
+  transform-origin: 432px 152px;
+  transition: transform 0.4s ease-out;
+}
+
+.group:hover .hero-foliage-leaf-1 {
+  animation: heroLeafFlutter1 2.2s ease-in-out infinite alternate;
+}
+
+.group:hover .hero-foliage-leaf-2 {
+  animation: heroLeafFlutter2 2.6s ease-in-out infinite alternate;
+}
+
+.hero-banner-inner {
+  will-change: transform;
+}
+
+/* ========================================================= */
+/* Timer Alarm Going Off (Watch / Clock Ringing & Vibrating) */
+/* Smooth, elegant animation active ONLY on hover             */
+/* ========================================================= */
+
+/* Smooth ringing sway / vibration when timer goes off */
+@keyframes timerSmoothRing {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(-4.2deg) translateY(-2.5px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  75% {
+    transform: rotate(4.2deg) translateY(-2.5px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
+
+/* Sound / chime waves smoothly radiating from clock on hover */
+@keyframes timerSmoothChimes {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  30% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+  70% {
+    opacity: 0.55;
+    transform: scale(1.22);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.32);
+  }
+}
+
+/* Top crown buzzer bouncing smoothly */
+@keyframes timerSmoothCrown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3.5px);
+  }
+}
+
+/* Active clock hand subtle pulse / twitch at mark */
+@keyframes timerSmoothHand {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5.5deg);
+  }
+}
+
+/* Ground shadow breathing with ringing hops */
+@keyframes timerSmoothShadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(0.92, 0.92);
+    opacity: 0.55;
+  }
+}
+
+/* Idle state: completely still, calm, and resting */
+.timer-ringing-body {
+  transform-origin: 126px 236px;
+  transform: rotate(0deg) translateY(0px);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.timer-chime-waves {
+  transform-origin: 126px 36px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.timer-crown-bounce {
+  transform-origin: 126px 33px;
+  transform: translateY(0px);
+  transition: transform 0.4s ease-out;
+  will-change: transform;
+}
+
+.timer-hand-twitch {
+  transform-origin: 126px 140px;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease-out;
+  will-change: transform;
+}
+
+.timer-shadow-squash {
+  transform-origin: 126px 242px;
+  transform: scale(1);
+  opacity: 0.85;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  will-change: transform, opacity;
+}
+
+/* On hover: buttery smooth, harmonious alarm timer animation */
+.group:hover .timer-ringing-body,
+.timer-ringing-body:hover,
+svg:hover .timer-ringing-body {
+  animation: timerSmoothRing 0.72s ease-in-out infinite;
+}
+
+.group:hover .timer-chime-waves,
+.timer-chime-waves:hover,
+svg:hover .timer-chime-waves {
+  animation: timerSmoothChimes 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.group:hover .timer-crown-bounce,
+.timer-crown-bounce:hover,
+svg:hover .timer-crown-bounce {
+  animation: timerSmoothCrown 0.36s ease-in-out infinite;
+}
+
+.group:hover .timer-hand-twitch,
+.timer-hand-twitch:hover,
+svg:hover .timer-hand-twitch {
+  animation: timerSmoothHand 0.42s ease-in-out infinite;
+}
+
+.group:hover .timer-shadow-squash,
+svg:hover .timer-shadow-squash {
+  animation: timerSmoothShadow 0.72s ease-in-out infinite;
+}
+
+
